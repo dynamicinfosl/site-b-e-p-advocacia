@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import Header from '../../components/feature/Header';
 import Footer from '../../components/feature/Footer';
-import WhatsAppButton from '../../components/feature/WhatsAppButton';
 import Button from '../../components/base/Button';
 
 export default function Contato() {
@@ -64,12 +63,12 @@ export default function Contato() {
     {
       icon: 'ri-map-pin-line',
       title: 'Endereço',
-      content: 'Rua Augusta, 1234\nSão Paulo - SP\nCEP: 01305-100'
+      content: 'Av das Américas 1155, sal 206, 207 edifício Barra space Center\nSão Paulo - SP\nCEP: 01305-100'
     },
     {
       icon: 'ri-phone-line',
       title: 'Telefone',
-      content: '(11) 99999-9999'
+      content: 'Telefone: (21) 2533-3074\nWhatsApp: (21) 98461-0776'
     },
     {
       icon: 'ri-mail-line',
@@ -79,7 +78,7 @@ export default function Contato() {
     {
       icon: 'ri-time-line',
       title: 'Horário de Funcionamento',
-      content: 'Segunda a Sexta: 8h às 18h\nSábado: 8h às 12h'
+      content: 'Segunda a Sexta: 8h às 17h45'
     }
   ];
 
@@ -234,7 +233,7 @@ export default function Contato() {
                       onChange={handleInputChange}
                       required
                       className="w-full px-4 py-3 rounded-lg border border-beige-dark focus:outline-none focus:ring-2 focus:ring-gold-light font-lato text-sm"
-                      placeholder="(11) 99999-9999"
+                    placeholder="(21) 98461-0776"
                     />
                   </div>
                   
@@ -383,26 +382,25 @@ export default function Contato() {
             <Button 
               variant="primary" 
               size="lg"
-              onClick={() => window.open('https://wa.me/5511999999999?text=Olá! Preciso de atendimento de emergência.', '_blank')}
+              onClick={() => window.open('https://wa.me/5521984610776?text=Olá! Preciso de atendimento de emergência.', '_blank')}
             >
               <i className="ri-whatsapp-line mr-2"></i>
-              WhatsApp 24h
+              WhatsApp 24h (21) 98461-0776
             </Button>
             <Button 
               variant="outline" 
               size="lg" 
               className="text-white border-white hover:bg-white hover:text-brown-dark"
-              onClick={() => window.open('tel:+5511999999999', '_self')}
+              onClick={() => window.open('tel:+552125333074', '_self')}
             >
               <i className="ri-phone-line mr-2"></i>
-              (11) 99999-9999
+              (21) 2533-3074
             </Button>
           </div>
         </div>
       </section>
 
       <Footer />
-      <WhatsAppButton />
     </div>
   );
 }

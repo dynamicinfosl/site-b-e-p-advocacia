@@ -1,7 +1,6 @@
 
 import Header from '../../components/feature/Header';
 import Footer from '../../components/feature/Footer';
-import WhatsAppButton from '../../components/feature/WhatsAppButton';
 import { Link } from 'react-router-dom';
 
 export default function PoliticaPrivacidade() {
@@ -39,7 +38,7 @@ export default function PoliticaPrivacidade() {
               </h2>
               <p className="font-lato text-brown-light leading-relaxed mb-4">
                 A B&P Advocacia, inscrita no CNPJ sob o nº 12.345.678/0001-90, com sede na 
-                Rua Augusta, 1234, São Paulo - SP, CEP 01305-100, está comprometida com a 
+                Av das Américas 1155, sal 206, 207 edifício Barra space Center, São Paulo - SP, CEP 01305-100, está comprometida com a 
                 proteção da privacidade e dos dados pessoais de seus clientes, visitantes do 
                 site e demais interessados.
               </p>
@@ -280,9 +279,12 @@ export default function PoliticaPrivacidade() {
                         <i className="ri-mail-line mr-2 text-gold-light"></i>
                         dpo@bpadvocacia.com.br
                       </p>
-                      <p className="font-lato flex items-center">
-                        <i className="ri-phone-line mr-2 text-gold-light"></i>
-                        (11) 99999-9999
+                      <p className="font-lato flex items-start">
+                        <i className="ri-phone-line mr-2 text-gold-light mt-1"></i>
+                        <span>
+                          Tel: (21) 2533-3074<br />
+                          WhatsApp: (21) 98461-0776
+                        </span>
                       </p>
                     </div>
                   </div>
@@ -291,7 +293,7 @@ export default function PoliticaPrivacidade() {
                     <div className="space-y-2">
                       <p className="font-lato flex items-start">
                         <i className="ri-map-pin-line mr-2 text-gold-light mt-1"></i>
-                        Rua Augusta, 1234<br />
+                        Av das Américas 1155, sal 206, 207 edifício Barra space Center<br />
                         São Paulo - SP<br />
                         CEP: 01305-100
                       </p>
@@ -345,7 +347,6 @@ export default function PoliticaPrivacidade() {
       </section>
 
       <Footer />
-      <WhatsAppButton />
     </div>
   );
 }

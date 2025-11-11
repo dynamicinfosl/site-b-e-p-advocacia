@@ -4,7 +4,7 @@ import { useState } from 'react';
 export default function WhatsAppButton() {
   const [isHovered, setIsHovered] = useState(false);
   
-  const phoneNumber = "5511999999999"; // Número do WhatsApp
+  const phoneNumber = "5521984610776"; // Número do WhatsApp
   const message = "Olá! Gostaria de agendar uma consulta jurídica.";
   
   const handleWhatsAppClick = () => {

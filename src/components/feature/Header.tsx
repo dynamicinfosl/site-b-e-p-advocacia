@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import Button from '../base/Button';
+import Logo from '../base/Logo';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,15 +24,7 @@ export default function Header() {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="flex items-center">
-            <Link to="/" className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-brown-dark rounded-lg flex items-center justify-center">
-                <span className="text-gold-light font-playfair font-bold text-xl">B&P</span>
-              </div>
-              <div>
-                <h1 className="font-playfair font-bold text-xl text-brown-dark">B&P Advocacia</h1>
-                <p className="font-lato text-sm text-brown-light">Confiança & Resultado</p>
-              </div>
-            </Link>
+            <Logo variant="horizontal" size="md" showText={true} linkTo="/" />
           </div>
 
           {/* Desktop Navigation */}
@@ -50,14 +42,6 @@ export default function Header() {
                 {item.name}
               </Link>
             ))}
-          </div>
-
-          {/* CTA Button */}
-          <div className="hidden lg:block">
-            <Button variant="primary" size="md">
-              <i className="ri-phone-line mr-2"></i>
-              Fale Conosco
-            </Button>
           </div>
 
           {/* Mobile menu button */}
@@ -91,12 +75,6 @@ export default function Header() {
                   {item.name}
                 </Link>
               ))}
-              <div className="pt-4">
-                <Button variant="primary" size="md" className="w-full">
-                  <i className="ri-phone-line mr-2"></i>
-                  Fale Conosco
-                </Button>
-              </div>
             </div>
           </div>
         )}

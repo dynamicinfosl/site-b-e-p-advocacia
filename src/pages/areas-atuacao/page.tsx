@@ -1,7 +1,6 @@
 
 import Header from '../../components/feature/Header';
 import Footer from '../../components/feature/Footer';
-import WhatsAppButton from '../../components/feature/WhatsAppButton';
 import Button from '../../components/base/Button';
 import { Link } from 'react-router-dom';
 
@@ -242,7 +241,6 @@ export default function AreasAtuacao() {
       </section>
 
       <Footer />
-      <WhatsAppButton />
     </div>
   );
 }

@@ -1,7 +1,6 @@
 
 import Header from '../../components/feature/Header';
 import Footer from '../../components/feature/Footer';
-import WhatsAppButton from '../../components/feature/WhatsAppButton';
 import Button from '../../components/base/Button';
 import { Link } from 'react-router-dom';
 
@@ -258,18 +257,11 @@ export default function QuemSomos() {
                 Ver Equipe
               </Button>
             </Link>
-            <Link to="/contato">
-              <Button variant="outline" size="lg" className="text-white border-white hover:bg-white hover:text-brown-dark">
-                <i className="ri-phone-line mr-2"></i>
-                Fale Conosco
-              </Button>
-            </Link>
           </div>
         </div>
       </section>
 
       <Footer />
-      <WhatsAppButton />
     </div>
   );
 }

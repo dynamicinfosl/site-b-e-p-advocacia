@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import Header from '../../components/feature/Header';
 import Footer from '../../components/feature/Footer';
-import WhatsAppButton from '../../components/feature/WhatsAppButton';
 import Button from '../../components/base/Button';
 import { Link } from 'react-router-dom';
 
@@ -327,7 +326,6 @@ export default function Blog() {
       </section>
 
       <Footer />
-      <WhatsAppButton />
     </div>
   );
 }

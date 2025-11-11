@@ -1,5 +1,6 @@
 
 import { Link } from 'react-router-dom';
+import Logo from '../base/Logo';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -10,14 +11,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo e Descrição */}
           <div className="lg:col-span-2">
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="w-12 h-12 bg-gold-light rounded-lg flex items-center justify-center">
-                <span className="text-brown-dark font-playfair font-bold text-xl">B&P</span>
-              </div>
-              <div>
-                <h3 className="font-playfair font-bold text-xl">B&P Advocacia</h3>
-                <p className="font-lato text-sm text-gold-light">Confiança & Resultado</p>
-              </div>
+            <div className="mb-4">
+              <Logo variant="horizontal" size="md" showText={true} linkTo="/" />
             </div>
             <p className="font-lato text-beige-light mb-6 max-w-md">
               Escritório especializado em soluções jurídicas com foco em resultados efetivos. 
@@ -27,7 +22,12 @@ export default function Footer() {
               <a href="#" className="w-10 h-10 bg-gold-light/20 rounded-full flex items-center justify-center hover:bg-gold-light hover:text-brown-dark transition-colors duration-300">
                 <i className="ri-linkedin-fill text-lg"></i>
               </a>
-              <a href="#" className="w-10 h-10 bg-gold-light/20 rounded-full flex items-center justify-center hover:bg-gold-light hover:text-brown-dark transition-colors duration-300">
+              <a
+                href="https://www.instagram.com/bepadvocacia?igsh=MXdzYTNqaXZ4aXBpZg=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-gold-light/20 rounded-full flex items-center justify-center hover:bg-gold-light hover:text-brown-dark transition-colors duration-300"
+              >
                 <i className="ri-instagram-line text-lg"></i>
               </a>
               <a href="#" className="w-10 h-10 bg-gold-light/20 rounded-full flex items-center justify-center hover:bg-gold-light hover:text-brown-dark transition-colors duration-300">
@@ -56,14 +56,17 @@ export default function Footer() {
               <div className="flex items-start space-x-3">
                 <i className="ri-map-pin-line text-gold-light mt-1"></i>
                 <p className="font-lato text-beige-light text-sm">
-                  Rua Augusta, 1234<br />
+                  Av das Américas 1155, sal 206, 207 edifício Barra space Center<br />
                   São Paulo - SP<br />
                   CEP: 01305-100
                 </p>
               </div>
               <div className="flex items-center space-x-3">
                 <i className="ri-phone-line text-gold-light"></i>
-                <p className="font-lato text-beige-light text-sm">(11) 99999-9999</p>
+                <p className="font-lato text-beige-light text-sm">
+                  Tel: (21) 2533-3074<br />
+                  WhatsApp: (21) 98461-0776
+                </p>
               </div>
               <div className="flex items-center space-x-3">
                 <i className="ri-mail-line text-gold-light"></i>
@@ -71,7 +74,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-3">
                 <i className="ri-time-line text-gold-light"></i>
-                <p className="font-lato text-beige-light text-sm">Seg - Sex: 8h às 18h</p>
+                <p className="font-lato text-beige-light text-sm">Seg - Sex: 8h às 17h45</p>
               </div>
             </div>
           </div>
