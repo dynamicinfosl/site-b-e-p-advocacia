@@ -38,6 +38,7 @@ As seguintes variáveis são lidas no build do Vite e injetadas como constantes 
 - `BASE_PATH` (opcional): define o caminho base do aplicativo (útil quando servido em subcaminho, ex.: `/site`).
   - Mapeada para `__BASE_PATH__` no código e usada como `basename` do `BrowserRouter`.
 - `IS_PREVIEW` (opcional): sinaliza modo de preview (booleano). Mapeada para `__IS_PREVIEW__`.
+- `VITE_NEWS_API_KEY` (obrigatória para notícias dinâmicas): chave da API do [GNews](https://gnews.io/). Sem essa variável o aplicativo utiliza um conjunto de notícias padrão apenas para demonstração.
 
 Exemplos de uso no Windows PowerShell:
 ```powershell
