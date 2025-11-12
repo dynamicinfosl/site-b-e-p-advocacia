@@ -56,9 +56,9 @@ export default function Footer() {
               <div className="flex items-start space-x-3">
                 <i className="ri-map-pin-line text-gold-light mt-1"></i>
                 <p className="font-lato text-beige-light text-sm">
-                  Av das Américas 1155, sal 206, 207 edifício Barra space Center<br />
-                  São Paulo - SP<br />
-                  CEP: 01305-100
+                  Av das Américas 1155, salas 206 e 207 edifício Barra space Center<br />
+                  Rio de Janeiro - RJ<br />
+                  CEP: 22631-000
                 </p>
               </div>
               <div className="flex items-center space-x-3">

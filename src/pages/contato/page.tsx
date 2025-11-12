@@ -63,7 +63,7 @@ export default function Contato() {
     {
       icon: 'ri-map-pin-line',
       title: 'Endereço',
-      content: 'Av das Américas 1155, sal 206, 207 edifício Barra space Center\nSão Paulo - SP\nCEP: 01305-100'
+      content: 'Av das Américas 1155, salas 206 e 207 edifício Barra space Center\nRio de Janeiro - RJ\nCEP: 22631-000'
     },
     {
       icon: 'ri-phone-line',
@@ -349,13 +349,13 @@ export default function Contato() {
               Nossa Localização
             </h2>
             <p className="font-lato text-lg text-brown-light max-w-2xl mx-auto">
-              Estamos localizados no coração de São Paulo, com fácil acesso por transporte público e particular.
+              Estamos localizados no coração do Rio de Janeiro, com fácil acesso por transporte público e particular.
             </p>
           </div>
           
           <div className="rounded-xl overflow-hidden shadow-lg">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1975!2d-46.6520442!3d-23.5505199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt!2sbr!4v1234567890"
+              src="https://www.google.com/maps?q=Av.+das+Am%C3%A9ricas+1155+-+Barra+da+Tijuca,+Rio+de+Janeiro+-+RJ&output=embed"
               width="100%"
               height="400"
               style={{ border: 0 }}

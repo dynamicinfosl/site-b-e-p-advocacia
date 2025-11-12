@@ -38,7 +38,7 @@ export default function PoliticaPrivacidade() {
               </h2>
               <p className="font-lato text-brown-light leading-relaxed mb-4">
                 A B&P Advocacia, inscrita no CNPJ sob o nº 12.345.678/0001-90, com sede na 
-                Av das Américas 1155, sal 206, 207 edifício Barra space Center, São Paulo - SP, CEP 01305-100, está comprometida com a 
+                Av das Américas 1155, salas 206 e 207 edifício Barra space Center, Rio de Janeiro - RJ, CEP 22631-000, está comprometida com a 
                 proteção da privacidade e dos dados pessoais de seus clientes, visitantes do 
                 site e demais interessados.
               </p>
@@ -293,9 +293,9 @@ export default function PoliticaPrivacidade() {
                     <div className="space-y-2">
                       <p className="font-lato flex items-start">
                         <i className="ri-map-pin-line mr-2 text-gold-light mt-1"></i>
-                        Av das Américas 1155, sal 206, 207 edifício Barra space Center<br />
-                        São Paulo - SP<br />
-                        CEP: 01305-100
+                        Av das Américas 1155, salas 206 e 207 edifício Barra space Center<br />
+                        Rio de Janeiro - RJ<br />
+                        CEP: 22631-000
                       </p>
                     </div>
                   </div>
