@@ -17,6 +17,7 @@ type BlogArticle = {
   readTime: string;
   image: string;
   url: string;
+  fullContent: string;
 };
 
 const IMAGE_PLACEHOLDER = "https://placehold.co/600x400?text=Not%C3%ADcia+Jur%C3%ADdica";
@@ -29,6 +30,15 @@ const categoryQueries: Record<string, string> = {
   "Direito Trabalhista": "\"direito trabalhista\" OR CLT OR \"relações de trabalho\"",
   "Direito Empresarial": "\"direito empresarial\" OR \"societário\" OR \"contratos comerciais\"",
   "Direito do Consumidor": "\"direito do consumidor\" OR PROCON OR \"relação de consumo\"",
+};
+
+const categoryImages: Record<string, string> = {
+  Todos: "https://images.unsplash.com/photo-1529400971008-f566de0e6dfc?auto=format&fit=crop&w=960&q=80",
+  "Direito Civil": "https://images.unsplash.com/photo-1529400971008-f566de0e6dfc?auto=format&fit=crop&w=960&q=80",
+  "Direito Trabalhista": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=960&q=80",
+  "Direito Empresarial": "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=960&q=80",
+  "Direito do Consumidor": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=960&q=80",
+  "Notícia Jurídica": "https://images.unsplash.com/photo-1529400971008-f566de0e6dfc?auto=format&fit=crop&w=960&q=80",
 };
 
 function estimateReadTime(text: string) {
@@ -79,6 +89,8 @@ function truncate(text: string, maxLength = 200) {
 function mapNewsToBlogArticles(newsArticles: NewsArticle[], selectedCategory: string): BlogArticle[] {
   return newsArticles.map((article) => {
     const category = selectedCategory === "Todos" ? article.source || "Notícia Jurídica" : selectedCategory;
+    const fallbackImage =
+      categoryImages[category] ?? categoryImages["Notícia Jurídica"] ?? IMAGE_PLACEHOLDER;
 
     return {
       id: article.id,
@@ -89,8 +101,9 @@ function mapNewsToBlogArticles(newsArticles: NewsArticle[], selectedCategory: st
       date: formatDate(article.publishedAt),
       dateShort: formatDateShort(article.publishedAt),
       readTime: estimateReadTime(article.content || article.description || ""),
-      image: article.imageUrl || IMAGE_PLACEHOLDER,
+      image: article.imageUrl || fallbackImage,
       url: article.url,
+      fullContent: article.content || article.description || "",
     };
   });
 }
@@ -101,6 +114,7 @@ export default function Blog() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [reloadKey, setReloadKey] = useState(0);
+  const [modalArticle, setModalArticle] = useState<BlogArticle | null>(null);
   const cacheRef = useRef<Record<string, BlogArticle[]>>({});
 
   const selectedQuery = useMemo(
@@ -160,9 +174,17 @@ export default function Blog() {
     setReloadKey((value) => value + 1);
   };
 
-  const handleOpenArticle = (url: string) => {
+  const handleCloseModal = () => {
+    setModalArticle(null);
+  };
+
+  const handleOpenArticle = (article: BlogArticle) => {
+    if (!article.url || article.url === "#") {
+      setModalArticle(article);
+      return;
+    }
     if (typeof window !== "undefined") {
-      window.open(url, "_blank", "noopener,noreferrer");
+      window.open(article.url, "_blank", "noopener,noreferrer");
     }
   };
 
@@ -289,7 +311,7 @@ export default function Blog() {
                           variant="outline"
                           size="sm"
                           className="w-full"
-                          onClick={() => handleOpenArticle(article.url)}
+                          onClick={() => handleOpenArticle(article)}
                         >
                           Ler Artigo Completo
                           <i className="ri-arrow-right-line ml-2"></i>
@@ -384,7 +406,7 @@ export default function Blog() {
                       variant="outline"
                       size="sm"
                       className="w-full"
-                      onClick={() => handleOpenArticle(article.url)}
+                      onClick={() => handleOpenArticle(article)}
                     >
                       Ler Mais
                       <i className="ri-arrow-right-line ml-2"></i>
@@ -483,6 +505,53 @@ export default function Blog() {
       </section>
 
       <Footer />
+
+      {modalArticle && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4">
+          <div className="relative max-w-2xl w-full bg-white rounded-2xl shadow-2xl overflow-hidden">
+            <button
+              aria-label="Fechar"
+              className="absolute top-4 right-4 text-brown-light hover:text-brown-dark transition-colors"
+              onClick={handleCloseModal}
+            >
+              <i className="ri-close-line text-2xl" />
+            </button>
+            <div className="p-8 space-y-6">
+              <span className="inline-flex items-center px-3 py-1 rounded-full bg-gold-light text-brown-dark font-lato text-xs uppercase tracking-wide">
+                {modalArticle.category}
+              </span>
+              <div>
+                <h3 className="font-playfair text-3xl text-brown-dark mb-4">
+                  {modalArticle.title}
+                </h3>
+                <div className="flex flex-wrap items-center gap-4 text-sm text-brown-light">
+                  <span className="flex items-center gap-2">
+                    <i className="ri-user-line" />
+                    {modalArticle.author}
+                  </span>
+                  <span className="flex items-center gap-2">
+                    <i className="ri-calendar-line" />
+                    {modalArticle.date}
+                  </span>
+                  <span className="flex items-center gap-2">
+                    <i className="ri-time-line" />
+                    {modalArticle.readTime}
+                  </span>
+                </div>
+              </div>
+              <p className="font-lato text-brown-light leading-relaxed whitespace-pre-line">
+                {modalArticle.fullContent || modalArticle.excerpt}
+              </p>
+              <div className="flex justify-end">
+                <Button variant="primary" onClick={handleCloseModal}>
+                  Fechar
+                  <i className="ri-close-circle-line ml-2"></i>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -13,7 +13,8 @@ export function getFallbackNews(): NewsArticle[] {
       content:
         "Mantemos nossos clientes informados sobre as novidades relevantes do universo jurídico. Nesta semana, destacamos decisões em tribunais superiores e alterações regulatórias que exigem atenção imediata.",
       url: "#",
-      imageUrl: "https://placehold.co/600x400?text=Not%C3%ADcia+Jur%C3%ADdica",
+      imageUrl:
+        "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=960&q=80",
       source: "Equipe B&E P Advocacia",
       publishedAt: isoDate,
     },
@@ -25,7 +26,8 @@ export function getFallbackNews(): NewsArticle[] {
       content:
         "Uma preparação adequada para auditorias trabalhistas envolve revisão de contratos, treinamentos constantes e acompanhamento de jurisprudência. Nossa equipe separou orientações essenciais.",
       url: "#",
-      imageUrl: "https://placehold.co/600x400?text=Direito+Trabalhista",
+      imageUrl:
+        "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=960&q=80",
       source: "Equipe B&E P Advocacia",
       publishedAt: isoDate,
     },
@@ -37,7 +39,8 @@ export function getFallbackNews(): NewsArticle[] {
       content:
         "O planejamento sucessório é uma ferramenta estratégica que evita litígios e protege o patrimônio familiar. Abordamos instrumentos como testamentos, holdings e doações.",
       url: "#",
-      imageUrl: "https://placehold.co/600x400?text=Direito+Civil",
+      imageUrl:
+        "https://images.unsplash.com/photo-1529400971008-f566de0e6dfc?auto=format&fit=crop&w=960&q=80",
       source: "Equipe B&E P Advocacia",
       publishedAt: isoDate,
     },
